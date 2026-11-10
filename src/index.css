@@ -1,0 +1,43 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+@media (min-width: 1350px) {
+  html {
+    font-size: 120%;
+  }
+}
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 130%;
+  }
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 140%;
+  }
+}
+
+body {
+  color: #0a0a0a;
+  background-color: #ebebeb;
+  font-smooth: always;
+  font-synthesis: none;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Geist", "Inter", "Segoe UI", sans-serif;
+}
+
+html.invert #code {
+  filter: invert(1);
+}
+
+html.invert .shadow,
+html.invert [class*="shadow-"] {
+  --tw-shadow-color: #fff;
+}

@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "newLine": "lf",
+
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleDetection": "auto",
+    "moduleResolution": "bundler",
+    "types": ["react", "react-dom"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+
+    "noEmit": true,
+    "noEmitOnError": true,
+    "removeComments": true,
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "useDefineForClassFields": true,
+    "noUncheckedIndexedAccess": true,
+
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "resolvePackageJsonExports": true,
+    "resolvePackageJsonImports": true,
+
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./src", "./vite.config.ts"]
+}
