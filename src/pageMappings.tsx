@@ -1,19 +1,19 @@
 /** @format */
 
-import { GettingStarted } from "./pages/introduction/getting-started";
-import { WorkingOfDatabaseServer } from "./pages/under-the-hood/how-database-server-works";
-import { WorkingOfKeyValueStore } from "./pages/under-the-hood/how-key-value-store-works";
+import { QuickStart } from "./pages/introduction/quick-start";
+import { KeyValueStoreMethods } from "./pages/key-value-store/store-methods";
+import { KeyValueStore } from "./pages/key-value-store/introduction-and-setup";
 import { Database } from "./pages/getting-started-with-databases/creating-databases";
 import { DatabaseServer } from "./pages/getting-started-with-databases/creating-a-server";
-import { DatabaseClient } from "./pages/getting-started-with-databases/connecting-to-a-server";
-import { DatabaseOperations } from "./pages/getting-started-with-databases/database-operations";
-import { KeyValueStore } from "./pages/key-value-store/introduction-and-setup";
-import { KeyValueStoreMethods } from "./pages/key-value-store/store-methods";
+import { WorkingOfKeyValueStore } from "./pages/under-the-hood/how-key-value-store-works";
+import { WorkingOfDatabaseServer } from "./pages/under-the-hood/how-database-server-works";
 import { WorkingOfDatabaseClient } from "./pages/under-the-hood/how-database-client-works";
 import { SchemaValidation } from "./pages/getting-started-with-databases/schema-validation";
+import { DatabaseClient } from "./pages/getting-started-with-databases/connecting-to-a-server";
+import { DatabaseOperations } from "./pages/getting-started-with-databases/database-operations";
 
 export const pages = {
-  Introduction: [{ title: "Getting Started", page: <GettingStarted /> }],
+  Introduction: [{ title: "Quick Start", page: <QuickStart /> }],
 
   "Getting Started with Databases": [
     { title: "Creating a Server", page: <DatabaseServer /> },

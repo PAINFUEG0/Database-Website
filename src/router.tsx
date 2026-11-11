@@ -10,7 +10,7 @@ export const router = createBrowserRouter([
     element: <Root />,
     children: [
       { path: "/*", element: <Navigate to="/" /> },
-      { path: "/", element: <Navigate to="/getting-started" /> },
+      { path: "/", element: <Navigate to="/quick-start" /> },
       ...Object.entries(pages).flatMap(([, V]) => V.map((_) => ({ path: _.title.toLowerCase().replaceAll(" ", "-"), element: _.page }))),
     ],
   },
