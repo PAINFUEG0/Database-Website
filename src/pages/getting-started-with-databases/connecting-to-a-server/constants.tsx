@@ -1,7 +1,7 @@
 /** @format */
 
 import { LuCircleAlert } from "react-icons/lu";
-import { InlineCode } from "../../components/CodeBlock";
+import { InlineCode } from "../../../components/CodeBlock";
 export const databaseClientOptions = [
   {
     signature: "host: string;",

@@ -1,6 +1,6 @@
 /** @format */
 
-import { InlineCode } from "../../components/CodeBlock";
+import { InlineCode } from "../../../components/CodeBlock";
 
 export const databaseServerOptions = [
   {

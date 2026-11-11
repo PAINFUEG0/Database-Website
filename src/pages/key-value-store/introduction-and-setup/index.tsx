@@ -2,7 +2,7 @@
 
 import { memo } from "react";
 import { FaDotCircle } from "react-icons/fa";
-import { CodeBlock } from "../../components/CodeBlock";
+import { CodeBlock } from "../../../components/CodeBlock";
 
 const standaloneCode = `
 import { KeyValueStore } from "<package>";

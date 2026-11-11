@@ -1,8 +1,8 @@
 /** @format */
 
 import { memo } from "react";
-import { List } from "../../components/List";
-import { CodeBlock, InlineCode } from "../../components/CodeBlock";
+import { List } from "../../../components/List";
+import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
 import { databaseClientSetupCode, clientSslOptions, databaseClientOptions } from "./constants";
 
 export const DatabaseClient = memo(() => {

@@ -2,7 +2,7 @@
 
 import { memo } from "react";
 import { FaDotCircle } from "react-icons/fa";
-import { List } from "../../components/List";
+import { List } from "../../../components/List";
 import { LuCircleAlert } from "react-icons/lu";
 
 const lifecycleMethods = [

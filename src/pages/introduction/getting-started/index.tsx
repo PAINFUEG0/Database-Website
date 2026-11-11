@@ -1,7 +1,7 @@
 /** @format */
 
 import { memo, useState } from "react";
-import { CodeBlock } from "../../components/CodeBlock";
+import { CodeBlock } from "../../../components/CodeBlock";
 import { gettingStartedClientCode, gettingStartedServerCode } from "./constants";
 import { TbCircleNumber1, TbCircleNumber2, TbCircleNumber3 } from "react-icons/tb";
 

@@ -1,9 +1,9 @@
 /** @format */
 
 import { memo } from "react";
-import { List } from "../../components/List";
-import { CodeBlock, InlineCode } from "../../components/CodeBlock";
-import { databaseSetupCode, databaseCreationMethods, databaseOptions, databaseMethods } from "./constants";
+import { List } from "../../../components/List";
+import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
+import { databaseSetupCode, databaseCreationMethods, databaseOptions, databaseMethods } from "../connecting-to-a-server/constants";
 // import { databaseSetupCode, databaseCreationMethods, databaseMethods, databaseOptions } from "./constants";
 
 export const Database = memo(() => {

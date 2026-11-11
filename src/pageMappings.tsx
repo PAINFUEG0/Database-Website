@@ -1,14 +1,16 @@
 /** @format */
 
-import { Database } from "./pages/client/Database";
-import { DatabaseClient } from "./pages/client/DatabaseClient";
-import { DatabaseServer } from "./pages/server/DatabaseServer";
-import { KeyValueStore } from "./pages/k-v-store/KeyValueStore";
-import { GettingStarted } from "./pages/introduction/GettingStarted";
-import { DatabaseOperations } from "./pages/client/DatabaseOperations";
-import { KeyValueStoreMethods } from "./pages/k-v-store/KeyValueStoreMethods";
-import { WorkingOfKeyValueStore } from "./pages/k-v-store/WorkingOfKeyValueStore";
-import { WorkingOfDatabaseServer } from "./pages/server/WorkingOfDatabaseServer";
+import { GettingStarted } from "./pages/introduction/getting-started";
+import { WorkingOfDatabaseServer } from "./pages/under-the-hood/how-database-server-works";
+import { WorkingOfKeyValueStore } from "./pages/under-the-hood/how-key-value-store-works";
+import { Database } from "./pages/getting-started-with-databases/creating-databases";
+import { DatabaseServer } from "./pages/getting-started-with-databases/creating-a-server";
+import { DatabaseClient } from "./pages/getting-started-with-databases/connecting-to-a-server";
+import { DatabaseOperations } from "./pages/getting-started-with-databases/database-operations";
+import { KeyValueStore } from "./pages/key-value-store/introduction-and-setup";
+import { KeyValueStoreMethods } from "./pages/key-value-store/store-methods";
+import { WorkingOfDatabaseClient } from "./pages/under-the-hood/how-database-client-works";
+import { SchemaValidation } from "./pages/getting-started-with-databases/schema-validation";
 
 export const pages = {
   Introduction: [{ title: "Getting Started", page: <GettingStarted /> }],
@@ -18,7 +20,7 @@ export const pages = {
     { title: "Connecting to a Server", page: <DatabaseClient /> },
     { title: "Creating databases", page: <Database /> },
     { title: "Database Operations", page: <DatabaseOperations /> },
-    { title: "Schema Validation", page: <></> },
+    { title: "Schema Validation", page: <SchemaValidation /> },
   ],
 
   "Key-Value Store": [
@@ -29,7 +31,7 @@ export const pages = {
   "Under the Hood": [
     { title: "How Key-Value Store Works", page: <WorkingOfKeyValueStore /> },
     { title: "How Database Server Works", page: <WorkingOfDatabaseServer /> },
-    { title: "How Database Client Works", page: <></> },
+    { title: "How Database Client Works", page: <WorkingOfDatabaseClient /> },
   ],
 
   Resources: [{ title: "FAQ & Support", page: <></> }],

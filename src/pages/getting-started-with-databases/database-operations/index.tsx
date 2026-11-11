@@ -1,10 +1,10 @@
 /** @format */
 
 import { memo } from "react";
-import { List } from "../../components/List";
-import { coreMethods, arrayMethods, numericMethods, booleanMethods } from "../k-v-store/KeyValueStoreMethods";
-import { databaseMethods } from "./constants";
 import { FaDotCircle } from "react-icons/fa";
+import { List } from "../../../components/List";
+import { databaseMethods } from "../connecting-to-a-server/constants";
+import { coreMethods, arrayMethods, numericMethods, booleanMethods } from "../../key-value-store/store-methods";
 // import { databaseSetupCode, databaseCreationMethods, databaseMethods, databaseOptions } from "./constants";
 
 export const DatabaseOperations = memo(() => {
