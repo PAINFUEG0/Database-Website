@@ -15,7 +15,6 @@ export const SidebarBody = memo(() => {
             <Link
               children={item.title}
               to={item.title.toLowerCase().replaceAll(" ", "-")}
-
               className={
                 "flex h-fit w-full cursor-pointer items-center rounded-sm py-1 pl-5 text-xs font-medium text-nowrap transition-all hover:scale-104 active:scale-98 " +
                 (location.pathname.endsWith(item.title.toLowerCase().replaceAll(" ", "-")) ? "bg-black/7" : "hover:bg-black/4")
