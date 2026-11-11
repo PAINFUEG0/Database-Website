@@ -1,8 +1,8 @@
 /** @format */
 
-import { codes } from "./constants";
 import { memo, useState } from "react";
 import { Link } from "react-router-dom";
+import { gettingStarted } from "./constants";
 import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
 import { TbCircleNumber1, TbCircleNumber2, TbCircleNumber3 } from "react-icons/tb";
 
@@ -72,7 +72,7 @@ export const QuickStart = memo(() => {
             <code className="rounded-md bg-gray-300 px-1" children={<InlineCode code="server.boot()" />} />
             <span> method and wait for the promise to resolve.</span>
           </p>
-          <CodeBlock code={codes.gettingStarted.server} />
+          <CodeBlock code={gettingStarted.codes.server} />
         </li>
 
         <li>
@@ -84,7 +84,7 @@ export const QuickStart = memo(() => {
             <code className="rounded-md bg-gray-300 px-1" children={<InlineCode code="client.createDatabase()" />} />
             <span> method to create database instances for operations.</span>
           </p>
-          <CodeBlock code={codes.gettingStarted.client} />
+          <CodeBlock code={gettingStarted.codes.client} />
         </li>
       </ul>
     </main>

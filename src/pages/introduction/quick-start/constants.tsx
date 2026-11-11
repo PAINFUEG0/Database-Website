@@ -1,7 +1,7 @@
 /** @format */
 
-export const codes = {
-  gettingStarted: {
+export const gettingStarted = {
+  codes: {
     server:
       `import { DatabaseServer } from "@xenodb/server";\n` +
       `\n` +
