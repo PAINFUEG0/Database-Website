@@ -1,0 +1,97 @@
+/** @format */
+
+import { LuCircleAlert } from "react-icons/lu";
+import { InlineCode } from "../../../components/CodeBlock";
+
+export const database = {
+  codes: {
+    setup: {
+      "Basic setup":
+        `import { DatabaseClient } from "@xenodb/client";\n` +
+        `\n` +
+        `const databaseConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
+        `const clientConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
+        `\n` +
+        `const client = await new DatabaseClient(clientConfiguration);\n` +
+        `await client.connect();\n` +
+        `\n` +
+        `// No data validation, for validation select 'Typed database' or 'Schema validated database' above\n` +
+        `const db = await client.createDatabase("users", databaseConfiguration); // Database<unknown>`,
+
+      "Typed database":
+        `import { DatabaseClient } from "@xenodb/client";\n` +
+        `\n` +
+        `const databaseConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
+        `const clientConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
+        `\n` +
+        `const client = await new DatabaseClient(clientConfiguration);\n` +
+        `await client.connect();\n` +
+        `\n` +
+        `// This way of usage provides type-level (compile-time) validation\n` +
+        `\n` +
+        `type T = { name: string; role: string; };\n` +
+        `const db = await client.createDatabase<T>("users", databaseConfiguration); // Database<T>`,
+
+      "Schema validated database":
+        `import { z } from "zod";\n` +
+        `import { DatabaseClient } from "@xenodb/client";\n` +
+        `\n` +
+        `const databaseConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
+        `const clientConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
+        `\n` +
+        `const client = await new DatabaseClient(clientConfiguration);\n` +
+        `await client.connect();\n` +
+        `\n` +
+        `// This way of usage provides type-level (compile-time) and server side schema based (run-time) validation\n` +
+        `\n` +
+        `const schema = z.object({ name: z.string(), role: z.string() });\n` +
+        `const db = await client.createDatabase("users", { schema, ...databaseConfiguration }); // Database<z.infer<typeof schema>>`,
+    },
+  },
+  creationMethods: [
+    {
+      signature: [
+        "createDatabase<T = unknown>(path: string, options?: type DatabaseOptions): Promise<Database<T>>",
+        "createDatabase<T extends z.ZodType>(path: string, options: type DatabaseOptions & { schema: T }): Promise<Database<z.infer<T>>>",
+      ],
+      description:
+        "Creates and initializes a database instance with optional Zod schema validation and storage configuration. When a Zod schema is provided, the database automatically infers its data type from the schema and validates stored data against it. Alternatively, you can explicitly specify a TypeScript type using the generic parameter. If neither is provided, the database defaults to unknown. Returns a promise that resolves to a fully initialized Database instance.",
+    },
+  ],
+  methods: [
+    {
+      signature: "database.init(options?: type Omit<DatabaseOptions,'schema'>)",
+      description: [
+        <p>
+          Initializes the database by sending an initialization request to the server with the storage configuration and optional JSON Schema. Returns
+          the database instance. If already initialized, returns the existing instance without initializing it again.
+        </p>,
+        <p id="code" className="mt-2 rounded-md border-2 border-orange-600/30 bg-amber-400/15 px-2 py-1 text-orange-500">
+          <LuCircleAlert className="mr-1 mb-0.5 inline" />
+          <span>Auto called and awaited when </span>
+          <span className="rounded-md bg-gray-400/50 px-1" id="code" children={<InlineCode code="client.createDatabase( . . . )" />} />
+          <span> is invoked.</span>
+        </p>,
+      ],
+    },
+  ],
+  databaseOptions: [
+    {
+      signature: "schema?: z.ZodType;",
+      description:
+        "Zod schema used to validate database values and infer their TypeScript types. Required when using the Zod schema overload of createDatabase(). The schema is converted into JSON Schema and sent to the server during initialization. All data is then validated server-side.",
+    },
+    {
+      signature: "keysPerFile?: number;",
+      description: "Maximum number of keys stored in each shard file. Defaults to 100.",
+    },
+    {
+      signature: "debounceTime?: number;",
+      description: "Delay in milliseconds before pending write operations are flushed to storage. Defaults to 250.",
+    },
+    {
+      signature: "maxDebounceCount?: number;",
+      description: "Maximum number of pending write operations before triggering an immediate storage flush. Defaults to 100.",
+    },
+  ],
+};
