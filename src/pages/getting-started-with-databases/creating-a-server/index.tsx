@@ -15,8 +15,8 @@ export const DatabaseServer = memo(() => {
       </h1>
 
       <p className="mb-10 text-sm font-semibold">
-        <span children="The class " />
-        <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="DatabaseServer" />} />
+        <span children="The " />
+        <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="class DatabaseServer" />} />
         <span children=" exposes a single lifecycle method " />
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="server.boot()" />} />
         <span children=" which initializes a HTTP/S gateway with endpoint for both a REST api (/rest) and WebSocket connections (/ws) on the specified port, and returns a " />
