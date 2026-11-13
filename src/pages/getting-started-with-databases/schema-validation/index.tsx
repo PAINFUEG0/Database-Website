@@ -1,19 +1,19 @@
 /** @format */
 
 import { memo } from "react";
+import { Link } from "react-router-dom";
 import { schemaValidation } from "./constants";
 import { List } from "../../../components/List";
+import { LuExternalLink } from "react-icons/lu";
 import { VscSymbolVariable } from "react-icons/vsc";
 import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
-import { LuExternalLink } from "react-icons/lu";
-import { Link } from "react-router-dom";
 
 export const SchemaValidation = memo(() => {
   return (
     <main className="relative flex min-h-dvh w-full shrink-0 flex-col overflow-y-auto px-2">
       <h1 className="mb-10 flex flex-row items-center gap-2 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
         <VscSymbolVariable className="shrink-0 text-[#ff8800]" id="code" />
-        <span>Schema Validation with Zod</span>
+        <span>Schema Validation</span>
       </h1>
 
       <p className="mb-5 text-sm font-semibold">
