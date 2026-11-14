@@ -48,6 +48,7 @@ export const KeyValueStore = memo(() => {
       <div className="mb-5 flex flex-row items-center justify-end gap-0 border-b border-black/20 pb-4">
         {Object.keys(keyValueStore.codes.setup).map((_) => (
           <button
+            key={_}
             children={_}
             onClick={() => setSelected(_ as keyof typeof keyValueStore.codes.setup)}
             className={

@@ -49,6 +49,7 @@ export const QuickStart = memo(() => {
           <div className="mt-5 mb-5 flex flex-row items-center gap-5 border-b border-black/20 px-5 pb-4">
             {["npm", "yarn", "pnpm"].map((_) => (
               <button
+                key={_}
                 children={_}
                 onClick={() => setSelected(_)}
                 id={selected === _ ? "code" : ""}

@@ -41,6 +41,7 @@ export const Database = memo(() => {
       <div className="mb-5 flex flex-row items-center justify-end gap-0 border-b border-black/20 pb-4">
         {Object.keys(database.codes.setup).map((_) => (
           <button
+            key={_}
             children={_}
             onClick={() => setSelected(_ as keyof typeof database.codes.setup)}
             className={
