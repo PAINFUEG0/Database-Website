@@ -5,7 +5,7 @@ import { LuCircleAlert } from "react-icons/lu";
 import { List } from "../../../components/List";
 import { VscSymbolMethod } from "react-icons/vsc";
 import { InlineCode } from "../../../components/CodeBlock";
-import { coreMethods, batchMethods, arrayMethods, numericMethods, booleanMethods } from "./constants";
+import { coreMethods, batchMethods, arrayMethods, numericMethods, booleanMethods } from "../../database-operations.constants";
 
 export const DatabaseOperations = memo(() => {
   return (

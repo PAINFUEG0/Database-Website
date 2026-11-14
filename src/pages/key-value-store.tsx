@@ -1,10 +1,10 @@
 /** @format */
 
 import { memo, useState } from "react";
-import { keyValueStore } from "./constants";
-import { List } from "../../../components/List";
+import { keyValueStore } from "../constants/key-value-store.constants";
+import { List } from "../components/List";
 import { VscSymbolClass } from "react-icons/vsc";
-import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
+import { CodeBlock, InlineCode } from "../components/CodeBlock";
 
 export const KeyValueStore = memo(() => {
   const [selected, setSelected] = useState<keyof typeof keyValueStore.codes.setup>("Basic");

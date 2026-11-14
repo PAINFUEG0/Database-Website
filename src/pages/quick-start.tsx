@@ -2,8 +2,8 @@
 
 import { memo, useState } from "react";
 import { Link } from "react-router-dom";
-import { gettingStarted } from "./constants";
-import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
+import { gettingStarted } from "../constants/quick-start.constants";
+import { CodeBlock, InlineCode } from "../components/CodeBlock";
 import { TbCircleNumber1, TbCircleNumber2, TbCircleNumber3 } from "react-icons/tb";
 
 export const QuickStart = memo(() => {

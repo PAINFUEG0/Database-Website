@@ -1,16 +1,16 @@
 /** @format */
 
-import { QuickStart } from "./pages/introduction/quick-start";
-import { KeyValueStoreMethods } from "./pages/key-value-store/store-methods";
-import { KeyValueStore } from "./pages/key-value-store/introduction-and-setup";
-import { Database } from "./pages/getting-started-with-databases/creating-databases";
-import { DatabaseServer } from "./pages/getting-started-with-databases/creating-a-server";
-import { WorkingOfKeyValueStore } from "./pages/under-the-hood/how-key-value-store-works";
-import { WorkingOfDatabaseServer } from "./pages/under-the-hood/how-database-server-works";
-import { WorkingOfDatabaseClient } from "./pages/under-the-hood/how-database-client-works";
-import { SchemaValidation } from "./pages/getting-started-with-databases/schema-validation";
-import { DatabaseClient } from "./pages/getting-started-with-databases/connecting-to-a-server";
-import { DatabaseOperations } from "./pages/getting-started-with-databases/database-operations";
+import { QuickStart } from "./pages/quick-start";
+import { Database } from "./pages/creating-databases";
+import { KeyValueStore } from "./pages/key-value-store";
+import { DatabaseServer } from "./pages/creating-a-server";
+import { SchemaValidation } from "./pages/schema-validation";
+import { KeyValueStoreMethods } from "./pages/store-methods";
+import { DatabaseClient } from "./pages/connecting-to-a-server";
+import { DatabaseOperations } from "./pages/database-operations";
+import { WorkingOfKeyValueStore } from "./pages/how-key-value-store-works";
+import { WorkingOfDatabaseServer } from "./pages/how-database-server-works";
+import { WorkingOfDatabaseClient } from "./pages/how-database-client-works";
 
 export const pages = {
   Introduction: [{ title: "Quick Start", page: <QuickStart /> }],

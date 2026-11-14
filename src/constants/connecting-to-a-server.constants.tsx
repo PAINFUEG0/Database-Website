@@ -1,6 +1,6 @@
 /** @format */
 
-import { InlineCode } from "../../../components/CodeBlock";
+import { InlineCode } from "../components/CodeBlock";
 
 export const databaseClient = {
   codes: {
@@ -13,8 +13,14 @@ export const databaseClient = {
       `\n` +
       `console.log("Connection established ! Ready to create databases");`,
   },
-
-  constructorOptions: [
+  constructorSignature: [
+    {
+      signature: "new DatabaseClient(options: type DatabaseClientOptions): DatabaseClient",
+      description:
+        "Creates a DatabaseClient instance for the server at the given host and port. The options are validated immediately and an error is thrown if any of them is invalid, including a host that contains a protocol such as http://. The request mode defaults to 'ws'. throwOnError is enabled unless onError is provided, and throwOnDisconnect is enabled unless onDisconnect is provided. No connection is made yet. In WebSocket mode, call connect() before creating databases. Returns an unconnected DatabaseClient instance.",
+    },
+  ],
+  databaseClientOptions: [
     {
       signature: "host: string;",
       description: "Hostname or IP address of the database server. Must not include the HTTP or HTTPS protocol.",

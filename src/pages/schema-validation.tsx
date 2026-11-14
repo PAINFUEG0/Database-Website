@@ -2,11 +2,11 @@
 
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import { schemaValidation } from "./constants";
-import { List } from "../../../components/List";
+import { schemaValidation } from "../constants/schema-validation.constants";
+import { List } from "../components/List";
 import { LuExternalLink } from "react-icons/lu";
 import { VscSymbolVariable } from "react-icons/vsc";
-import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
+import { CodeBlock, InlineCode } from "../components/CodeBlock";
 
 export const SchemaValidation = memo(() => {
   return (

@@ -1,10 +1,10 @@
 /** @format */
 
 import { memo } from "react";
-import { databaseClient } from "./constants";
-import { List } from "../../../components/List";
+import { databaseClient } from "../constants/connecting-to-a-server.constants";
+import { List } from "../components/List";
 import { VscSymbolClass } from "react-icons/vsc";
-import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
+import { CodeBlock, InlineCode } from "../components/CodeBlock";
 
 export const DatabaseClient = memo(() => {
   return (
@@ -44,6 +44,20 @@ export const DatabaseClient = memo(() => {
 
       <CodeBlock filename="client.ts" code={databaseClient.codes.setup} className="mb-10 w-full" />
 
+      <List type="constructor" iterable={databaseClient.constructorSignature} title="Construct signatures" />
+
+      <List
+        type="option"
+        iterable={databaseClient.databaseClientOptions}
+        title={<span children={["Database Client configuration ( ", <InlineCode code="type DatabaseClientOptions" />, " )"]} />}
+      />
+
+      <List
+        type="option"
+        iterable={databaseClient.sslOptions}
+        title={<span children={["SSL configuration ( ", <InlineCode code="type ClientSslConfig" />, " )"]} />}
+      />
+
       <List
         type="method"
         iterable={[
@@ -66,18 +80,6 @@ export const DatabaseClient = memo(() => {
           },
         ]}
         title="Database Client Methods"
-      />
-
-      <List
-        type="option"
-        iterable={databaseClient.constructorOptions}
-        title={<span children={["Database Client configuration ( ", <InlineCode code="type DatabaseClientOptions" />, " )"]} />}
-      />
-
-      <List
-        type="option"
-        iterable={databaseClient.sslOptions}
-        title={<span children={["SSL configuration ( ", <InlineCode code="type ClientSslConfig" />, " )"]} />}
       />
     </main>
   );

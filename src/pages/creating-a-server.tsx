@@ -1,10 +1,10 @@
 /** @format */
 
 import { memo } from "react";
-import { serverSetup } from "./constants";
-import { List } from "../../../components/List";
+import { serverSetup } from "../constants/creating-a-server.constants";
+import { List } from "../components/List";
 import { VscSymbolClass } from "react-icons/vsc";
-import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
+import { CodeBlock, InlineCode } from "../components/CodeBlock";
 
 export const DatabaseServer = memo(() => {
   return (
@@ -26,6 +26,20 @@ export const DatabaseServer = memo(() => {
 
       <CodeBlock filename="server.ts" code={serverSetup.codes.setup} className="mb-10 w-full" />
 
+      <List type="constructor" iterable={serverSetup.constructorSignature} title="Construct signatures" />
+
+      <List
+        type="option"
+        iterable={serverSetup.databaseServerOptions}
+        title={<span children={["Database Server configuration ( ", <InlineCode code="type DatabaseServerOptions" />, " )"]} />}
+      />
+
+      <List
+        type="option"
+        iterable={serverSetup.sslOptions}
+        title={<span children={["SSL configuration ( ", <InlineCode code="type ServerSslConfig" />, " )"]} />}
+      />
+
       <List
         type="method"
         iterable={[
@@ -35,18 +49,6 @@ export const DatabaseServer = memo(() => {
           },
         ]}
         title="Database Server Methods"
-      />
-
-      <List
-        type="option"
-        iterable={serverSetup.constructorOptions}
-        title={<span children={["Database Server configuration ( ", <InlineCode code="type DatabaseServerOptions" />, " )"]} />}
-      />
-
-      <List
-        type="option"
-        iterable={serverSetup.sslOptions}
-        title={<span children={["SSL configuration ( ", <InlineCode code="type ServerSslConfig" />, " )"]} />}
       />
     </main>
   );

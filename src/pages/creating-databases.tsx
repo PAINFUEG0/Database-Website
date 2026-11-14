@@ -1,11 +1,11 @@
 /** @format */
 
-import { database } from "./constants";
+import { database } from "../constants/creating-databases.constants";
 import { memo, useState } from "react";
-import { List } from "../../../components/List";
+import { List } from "../components/List";
 import { VscSymbolClass } from "react-icons/vsc";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
+import { CodeBlock, InlineCode } from "../components/CodeBlock";
 
 export const Database = memo(() => {
   const [selected, setSelected] = useState<keyof typeof database.codes.setup>("Basic");

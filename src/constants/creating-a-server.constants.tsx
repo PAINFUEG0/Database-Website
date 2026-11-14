@@ -1,6 +1,6 @@
 /** @format */
 
-import { InlineCode } from "../../../components/CodeBlock";
+import { InlineCode } from "../components/CodeBlock";
 
 export const serverSetup = {
   codes: {
@@ -13,7 +13,14 @@ export const serverSetup = {
       `\n` +
       `console.log(\`Server listening on port \${port}\`); // Useful when binding to port 0\n`,
   },
-  constructorOptions: [
+  constructorSignature: [
+    {
+      signature: "new DatabaseServer(options: type DatabaseServerOptions): DatabaseServer",
+      description:
+        "Creates a DatabaseServer instance with the given port, passphrase and optional SSL and logging configuration. The options are validated immediately and an error is thrown if any of them is invalid. When SSL is configured, the key and certificate files must exist and are read at this point. If onStdout or onStderr are not provided, output goes to console.log and console.error. The server does not start listening until boot() is called. Returns an unstarted DatabaseServer instance.",
+    },
+  ],
+  databaseServerOptions: [
     {
       signature: "port: number;",
       description: "Port for the server to listen on. Use 0 to let the operating system assign an available port.",

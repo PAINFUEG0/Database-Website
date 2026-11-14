@@ -2,9 +2,9 @@
 
 import { memo } from "react";
 import { FaDotCircle } from "react-icons/fa";
-import { List } from "../../../components/List";
+import { List } from "../components/List";
 import { LuCircleAlert } from "react-icons/lu";
-import { coreMethods, arrayMethods, numericMethods, booleanMethods } from "../../getting-started-with-databases/database-operations/constants";
+import { coreMethods, arrayMethods, numericMethods, booleanMethods } from "../constants/database-operations.constants";
 
 const lifecycleMethods = [
   {
