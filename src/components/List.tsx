@@ -3,12 +3,12 @@
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 import { InlineCode } from "./CodeBlock";
-import { VscSymbolMethod, VscSymbolVariable } from "react-icons/vsc";
+import { VscSymbolMethod, VscSymbolMisc, VscSymbolVariable } from "react-icons/vsc";
 
 type Props = {
   title: ReactNode;
   className?: string;
-  type: "method" | "option";
+  type: "method" | "option" | "constructor";
   iterable: { signature: string | string[]; description: ReactNode }[];
 };
 
@@ -16,6 +16,8 @@ export const List = ({ iterable, title, className, type }: Props) => {
   const Icon =
     type === "method" ? (
       <VscSymbolMethod className="shrink-0 text-[#ff8800]" id="code" />
+    ) : type === "constructor" ? (
+      <VscSymbolMisc className="shrink-0 text-[#ff8800]" id="code" />
     ) : (
       <VscSymbolVariable className="shrink-0 text-[#ff8800]" id="code" />
     );
