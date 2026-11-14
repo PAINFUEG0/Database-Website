@@ -12,7 +12,7 @@ export const KeyValueStoreOperations = memo(() => {
     <main className="relative flex min-h-dvh w-full shrink-0 flex-col overflow-y-auto px-2">
       <h1 className="mb-10 flex flex-row gap-2 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
         <VscSymbolMethod className="shrink-0 text-[#ff8800]" id="code" />
-        <span>Key-value Store Operations</span>
+        <span>Key-Value Store Operations</span>
       </h1>
 
       <p className="mb-5 text-sm font-semibold">
