@@ -45,7 +45,7 @@ export const KeyValueStore = memo(() => {
         <span children=" creates the directory, loads existing data and replays the write-ahead log. Do not point two stores or two processes at the same directory." />
       </p>
 
-      <div className="mb-5 flex flex-row items-center justify-end gap-0 border-b border-black/20 pb-2">
+      <div className="mb-5 flex flex-row items-center justify-end gap-0 border-b border-black/20 pb-4">
         {Object.keys(keyValueStore.codes.setup).map((_) => (
           <button
             children={_}

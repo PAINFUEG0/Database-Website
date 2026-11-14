@@ -6,8 +6,8 @@ export const database = {
       Basic:
         `import { DatabaseClient } from "@xenodb/client";\n` +
         `\n` +
-        `const databaseConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
-        `const clientConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
+        `const clientConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
+        `const databaseConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
         `\n` +
         `const client = await new DatabaseClient(clientConfiguration);\n` +
         `await client.connect();\n` +
@@ -19,8 +19,8 @@ export const database = {
       Typed:
         `import { DatabaseClient } from "@xenodb/client";\n` +
         `\n` +
-        `const databaseConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
-        `const clientConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
+        `const clientConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
+        `const databaseConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
         `\n` +
         `const client = await new DatabaseClient(clientConfiguration);\n` +
         `await client.connect();\n` +
@@ -34,8 +34,8 @@ export const database = {
         `import { z } from "zod";\n` +
         `import { DatabaseClient } from "@xenodb/client";\n` +
         `\n` +
-        `const databaseConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
-        `const clientConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
+        `const clientConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
+        `const databaseConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
         `\n` +
         `const client = await new DatabaseClient(clientConfiguration);\n` +
         `await client.connect();\n` +
@@ -64,15 +64,16 @@ export const database = {
     },
     {
       signature: "keysPerFile?: number;",
-      description: "Maximum number of keys stored in each shard file. Defaults to 100.",
+      description: "Maximum number of keys stored in each shard file. Defaults to 100. Range 0 < keysPerFile < 4097.",
     },
     {
       signature: "debounceTime?: number;",
-      description: "Delay in milliseconds before pending write operations are flushed to storage. Defaults to 250.",
+      description: "Delay in milliseconds before pending write operations are flushed to storage. Defaults to 250. Range 0 < debounceTime < 4097.",
     },
     {
       signature: "maxDebounceCount?: number;",
-      description: "Maximum number of pending write operations before triggering an immediate storage flush. Defaults to 100.",
+      description:
+        "Maximum number of pending write operations before triggering an immediate storage flush. Defaults to 100. Range 0 < maxDebounceCount < 4097.",
     },
   ],
 };

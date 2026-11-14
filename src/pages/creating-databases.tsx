@@ -38,7 +38,7 @@ export const Database = memo(() => {
         <span children=". It also supports optional Zod schema validation and storage configuration during initialization." />
       </p>
 
-      <div className="mb-5 flex flex-row items-center justify-end gap-0 border-b border-black/20 pb-2">
+      <div className="mb-5 flex flex-row items-center justify-end gap-0 border-b border-black/20 pb-4">
         {Object.keys(database.codes.setup).map((_) => (
           <button
             children={_}

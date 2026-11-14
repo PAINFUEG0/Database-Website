@@ -40,16 +40,7 @@ export const DatabaseServer = memo(() => {
         title={<span children={["SSL configuration ( ", <InlineCode code="type ServerSslConfig" />, " )"]} />}
       />
 
-      <List
-        type="method"
-        iterable={[
-          {
-            signature: "boot()",
-            description: "Initializes a HTTP/S gateway and returns a promise that resolves to the port that the server is listening on.",
-          },
-        ]}
-        title="Database Server Methods"
-      />
+      <List type="method" iterable={serverSetup.methods} title="Database Server Methods" />
     </main>
   );
 });

@@ -7,7 +7,7 @@ export const databaseClient = {
     setup:
       `import { DatabaseClient } from "@xenodb/client";\n` +
       `\n` +
-      `const options = { port: 3000, host: "0.0.0.0", passphrase: "your-secret-passphrase" }\n` +
+      `const options = { port: 3000, host: "localhost", passphrase: "your-secret-passphrase" }\n` +
       `const client = new DatabaseClient(options);\n` +
       `await client.connect();\n` +
       `\n` +
@@ -104,13 +104,17 @@ export const databaseClient = {
     {
       signature: "connect()",
       description: [
-        "Establishes a WebSocket connection to the database server and returns a ",
+        "When using ",
+        <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code='"ws"' />} />,
+        " transport, establishes a WebSocket connection to the database server and returns a ",
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="Promise<DatabaseClient>" />} />,
-        " that resolves to once the connection is open.",
+        " that resolves once the connection is open. Does nothing in case of ",
+        <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code='"rest"' />} />,
+        ".",
       ],
     },
     {
-      signature: "createDatabase<T>(path:string, options?: type DatabaseCreationOptions)",
+      signature: "createDatabase<T>(path: string, options?: type DatabaseOptions)",
       description: [
         "Creates and initializes a typed database at the specified path and returns a ",
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="Promise<Database<T>>" />} />,

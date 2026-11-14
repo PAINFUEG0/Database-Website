@@ -7,7 +7,7 @@ import { DatabaseServer } from "./pages/creating-a-server";
 import { SchemaValidation } from "./pages/schema-validation";
 import { DatabaseClient } from "./pages/connecting-to-a-server";
 import { DatabaseOperations } from "./pages/database-operations";
-import { KeyValueStoreOperations } from "./pages/store-opeartions";
+import { KeyValueStoreOperations } from "./pages/store-operations";
 import { WorkingOfKeyValueStore } from "./pages/how-key-value-store-works";
 import { WorkingOfDatabaseServer } from "./pages/how-database-server-works";
 import { WorkingOfDatabaseClient } from "./pages/how-database-client-works";

@@ -11,7 +11,7 @@ export const keyValueStore = {
       Basic:
         `import { KeyValueStore } from "@xenodb/server";\n` +
         `\n` +
-        `const path = path: "./local-data/users";\n` +
+        `const path = "./local-data/users";\n` +
         `const storeConfiguration = { path, keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 };\n` +
         `\n` +
         `// No data validation, for validation select 'Typed' or 'Validated' above\n` +
@@ -25,7 +25,7 @@ export const keyValueStore = {
       Typed:
         `import { KeyValueStore } from "@xenodb/server";\n` +
         `\n` +
-        `const path = path: "./local-data/users";\n` +
+        `const path = "./local-data/users";\n` +
         `const storeConfiguration = { path, keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 };\n` +
         `\n` +
         `// This way of usage provides type-level (compile-time) validation only\n` +
@@ -41,7 +41,7 @@ export const keyValueStore = {
         `import { z } from "zod";\n` +
         `import { KeyValueStore } from "@xenodb/server";\n` +
         `\n` +
-        `const path = path: "./local-data/users";\n` +
+        `const path = "./local-data/users";\n` +
         `const storeConfiguration = { path, keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 };\n` +
         `\n` +
         `// This way of usage provides type-level (compile-time) and schema based (run-time) validation\n` +
@@ -96,15 +96,16 @@ export const keyValueStore = {
     },
     {
       signature: "keysPerFile?: number;",
-      description: "Maximum number of keys stored in each shard file. Defaults to 100.",
+      description: "Maximum number of keys stored in each shard file. Defaults to 100. Range 0 < keysPerFile < 4097",
     },
     {
       signature: "debounceTime?: number;",
-      description: "Delay in milliseconds before pending write operations are flushed to storage. Defaults to 250.",
+      description: "Delay in milliseconds before pending write operations are flushed to storage. Defaults to 250. Range 0 < debounceTime < 4097",
     },
     {
       signature: "maxDebounceCount?: number;",
-      description: "Maximum number of pending write operations before triggering an immediate storage flush. Defaults to 100.",
+      description:
+        "Maximum number of pending write operations before triggering an immediate storage flush. Defaults to 100. Range 0 < maxDebounceCount < 4097",
     },
     {
       signature: "schema?: z.ZodType;",

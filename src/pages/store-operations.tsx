@@ -5,7 +5,7 @@ import { List } from "../components/List";
 import { VscSymbolMethod } from "react-icons/vsc";
 import { InlineCode } from "../components/CodeBlock";
 import { keyValueStore } from "../constants/key-value-store.constants";
-import { coreMethods, arrayMethods, numericMethods, booleanMethods } from "../constants/database-operations.constants";
+import { coreMethods, arrayMethods, numericMethods, booleanMethods, batchMethods } from "../constants/database-operations.constants";
 
 export const KeyValueStoreOperations = memo(() => {
   return (
@@ -32,10 +32,11 @@ export const KeyValueStoreOperations = memo(() => {
       </p>
 
       <List iterable={keyValueStore.methods} title="Lifecycle methods" type="method" />
-      <List iterable={coreMethods} title="Core CRUD Operations methods" type="method" />
-      <List iterable={arrayMethods} title="Array specific methods" type="method" />
-      <List iterable={numericMethods} title="Number specific methods" type="method" />
-      <List iterable={booleanMethods} title="Boolean specific methods" type="method" />
+      <List iterable={coreMethods} title="Basic CRUD Operation Methods" type="method" />
+      <List iterable={batchMethods} title="Batch CRUD Operation Methods" type="method" />
+      <List iterable={arrayMethods} title="Array Specific Methods" type="method" />
+      <List iterable={numericMethods} title="Number Specific Methods" type="method" />
+      <List iterable={booleanMethods} title="Boolean Specific Methods" type="method" />
     </main>
   );
 });

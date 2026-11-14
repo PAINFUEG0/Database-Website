@@ -67,7 +67,7 @@ export const serverSetup = {
   methods: [
     {
       signature: "boot()",
-      description: "Initializes a HTTP/S gateway and returns a promise that resolves to the port that the server is listening on",
+      description: "Initializes a HTTP/S gateway and returns a promise that resolves to the port that the server is listening on.",
     },
   ],
 };

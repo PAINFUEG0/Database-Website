@@ -15,13 +15,13 @@ export const DatabaseClient = memo(() => {
       </h1>
 
       <p className="mb-5 text-sm font-semibold">
-        <span children="The  " />
+        <span children="The " />
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="class DatabaseClient" />} />
         <span children=" exposes two methods " />
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="client.connect()" />} />
         <span children=" and " />
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="client.createDatabase()" />} />
-        <span children=" ." />
+        <span children="." />
       </p>
 
       <p className="mb-5 text-sm font-semibold">
