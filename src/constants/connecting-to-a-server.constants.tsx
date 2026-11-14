@@ -100,4 +100,22 @@ export const databaseClient = {
       description: "Controls server certificate verification. Set to false to allow self-signed or otherwise untrusted certificates.",
     },
   ],
+  methods: [
+    {
+      signature: "connect()",
+      description: [
+        "Establishes a WebSocket connection to the database server and returns a ",
+        <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="Promise<DatabaseClient>" />} />,
+        " that resolves to once the connection is open.",
+      ],
+    },
+    {
+      signature: "createDatabase<T>(path:string, options?: type DatabaseCreationOptions)",
+      description: [
+        "Creates and initializes a typed database at the specified path and returns a ",
+        <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="Promise<Database<T>>" />} />,
+        " that resolves to a Database instance of type T.",
+      ],
+    },
+  ],
 };
