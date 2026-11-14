@@ -2,10 +2,10 @@
 
 import { memo } from "react";
 import { LuCircleAlert } from "react-icons/lu";
-import { List } from "../../../components/List";
 import { VscSymbolMethod } from "react-icons/vsc";
-import { InlineCode } from "../../../components/CodeBlock";
-import { coreMethods, batchMethods, arrayMethods, numericMethods, booleanMethods } from "../../database-operations.constants";
+import { List } from "../components/List";
+import { InlineCode } from "../components/CodeBlock";
+import { coreMethods, batchMethods, arrayMethods, numericMethods, booleanMethods } from "../constants/database-operations.constants";
 
 export const DatabaseOperations = memo(() => {
   return (
