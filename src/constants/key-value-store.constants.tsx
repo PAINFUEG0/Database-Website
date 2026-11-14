@@ -110,7 +110,7 @@ export const keyValueStore = {
     {
       signature: "schema?: z.ZodType;",
       description:
-        "Zod schema used to validate database values and infer their TypeScript types. Required when using the Zod schema overload of createDatabase(). The schema is converted into JSON Schema and sent to the server during initialization. All data is then validated server-side.",
+        "Zod schema used to validate stored values and infer their TypeScript type. Required when using the Zod schema overload of the constructor. Every written value is validated against the schema before it is stored.",
     },
   ],
 };
