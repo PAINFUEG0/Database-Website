@@ -7,7 +7,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export const Footer = memo(() => {
   const { pathname } = useLocation();
-  const index = allPages.findIndex((page) => page.path === pathname);
+  const index = allPages.findIndex((page) => page.path === pathname.replaceAll("/", ""));
 
   const next = allPages[index + 1];
   const previous = allPages[index - 1];
@@ -21,7 +21,7 @@ export const Footer = memo(() => {
         </Link>
       )}
 
-      {previous && <span className="text-sm font-medium opacity-30">|</span>}
+      {previous && next && <span className="text-sm font-medium opacity-30">|</span>}
 
       {next && (
         <Link to={next.path} className="flex flex-row items-center gap-2 opacity-50 transition-all hover:opacity-100">

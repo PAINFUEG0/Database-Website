@@ -28,17 +28,19 @@ export const List = ({ iterable, title, className, type }: Props) => {
     >
       <div className="border-b border-black/20 bg-black/5 p-3 text-xs font-medium opacity-80">{title}</div>
 
-      {iterable.map((_) => (
-        <li className="flex scrollbar-none flex-col gap-2 overflow-auto border-b border-black/20 px-5 py-5">
-          {(Array.isArray(_.signature) ? _.signature : [_.signature]).map((signature, i) => (
-            <span className={"flex flex-row items-center gap-2 " + (i !== 0 ? "-mt-2" : "")}>
-              {Icon}
-              <InlineCode code={signature} className="flex lg:mb-0.5" />
-            </span>
-          ))}
-          <span className="text-[13px]" children={_.description} />
-        </li>
-      ))}
+      <ul>
+        {iterable.map((_) => (
+          <li className="flex scrollbar-none flex-col gap-2 overflow-auto border-b border-black/20 px-5 py-5">
+            {(Array.isArray(_.signature) ? _.signature : [_.signature]).map((signature, i) => (
+              <span className={"flex flex-row items-center gap-2 " + (i !== 0 ? "-mt-2" : "")}>
+                {Icon}
+                <InlineCode code={signature} className="flex lg:mb-0.5" />
+              </span>
+            ))}
+            <span className="text-[13px]" children={_.description} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

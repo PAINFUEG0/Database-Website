@@ -72,5 +72,3 @@ export const KeyValueStore = memo(() => {
     </main>
   );
 });
-
-KeyValueStore.displayName = "KeyValueStorePage";

@@ -11,7 +11,7 @@ export const gettingStarted = {
     client:
       `import { DatabaseClient } from "@xenodb/client";\n` +
       `\n` +
-      `const client = new DatabaseClient({ port: 3000, host: "0.0.0.0", passphrase: "secret" });\n` +
+      `const client = new DatabaseClient({ port: 3000, host: "localhost", passphrase: "secret" });\n` +
       `await client.connect();\n` +
       `\n` +
       `const db = await client.createDatabase("users");\n` +

@@ -11,7 +11,7 @@ export const keyValueStore = {
       Basic:
         `import { KeyValueStore } from "@xenodb/server";\n` +
         `\n` +
-        `const path = path: "./local-data/users",\n` +
+        `const path = path: "./local-data/users";\n` +
         `const storeConfiguration = { path, keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 };\n` +
         `\n` +
         `// No data validation, for validation select 'Typed' or 'Validated' above\n` +
@@ -25,7 +25,7 @@ export const keyValueStore = {
       Typed:
         `import { KeyValueStore } from "@xenodb/server";\n` +
         `\n` +
-        `const path = path: "./local-data/users",\n` +
+        `const path = path: "./local-data/users";\n` +
         `const storeConfiguration = { path, keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 };\n` +
         `\n` +
         `// This way of usage provides type-level (compile-time) validation only\n` +
@@ -41,7 +41,7 @@ export const keyValueStore = {
         `import { z } from "zod";\n` +
         `import { KeyValueStore } from "@xenodb/server";\n` +
         `\n` +
-        `const path = path: "./local-data/users",\n` +
+        `const path = path: "./local-data/users";\n` +
         `const storeConfiguration = { path, keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 };\n` +
         `\n` +
         `// This way of usage provides type-level (compile-time) and schema based (run-time) validation\n` +
@@ -61,7 +61,7 @@ export const keyValueStore = {
         "new KeyValueStore<T extends z.ZodType>(options: type KVstoreOptions & { schema: T }): KeyValueStore<z.infer<T>>",
       ],
       description:
-        "Creates and initializes a KeyValueStore instance with optional Zod schema validation and storage configuration. When a Zod schema is provided, the KeyValueStore automatically infers its data type from the schema and validates stored data against it. Alternatively, you can explicitly specify a TypeScript type using the generic parameter. If neither is provided, the database defaults to unknown. Returns an uninitialized KeyValueStore instance.",
+        "Creates a KeyValueStore instance with optional Zod schema validation and storage configuration. When a Zod schema is provided, the KeyValueStore automatically infers its data type from the schema and validates stored data against it. Alternatively, you can explicitly specify a TypeScript type using the generic parameter. If neither is provided, the database defaults to unknown. Returns an uninitialized KeyValueStore instance.",
     },
   ],
   methods: [
@@ -80,7 +80,9 @@ export const keyValueStore = {
         </p>,
         <p id="code" className="mt-4 rounded-md border-2 border-orange-600/30 bg-amber-400/15 px-2 py-1 text-orange-500">
           <LuCircleAlert className="mr-1 mb-0.5 inline" />
-          <span>Not called automatically. Await it before calling any other method. When the store runs inside </span>
+          <span>Must call and </span>
+          <span className="rounded-md bg-gray-400/50 px-1" id="code" children={<InlineCode code="await" />} />
+          <span> for it to resolve before calling any other method. When the store runs inside </span>
           <span className="rounded-md bg-gray-400/50 px-1" id="code" children={<InlineCode code="DatabaseServer" />} />
           <span>, the server calls it for you.</span>
         </p>,

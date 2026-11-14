@@ -7,7 +7,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { MobileSidebar } from "./components/sidebar/Mobile";
 import { DesktopSidebar } from "./components/sidebar/Desktop";
-import { memo, useEffect as useLayoutEffect, useRef, useState } from "react";
+import { memo, useLayoutEffect, useRef, useState } from "react";
 
 export const Root = memo(() => {
   const { pathname } = useLocation();

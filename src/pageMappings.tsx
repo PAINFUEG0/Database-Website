@@ -5,7 +5,7 @@ import { Database } from "./pages/creating-databases";
 import { KeyValueStore } from "./pages/key-value-store";
 import { DatabaseServer } from "./pages/creating-a-server";
 import { SchemaValidation } from "./pages/schema-validation";
-import { KeyValueStoreMethods } from "./pages/store-methods";
+import { KeyValueStoreOperations } from "./pages/store-opeartions";
 import { DatabaseClient } from "./pages/connecting-to-a-server";
 import { DatabaseOperations } from "./pages/database-operations";
 import { WorkingOfKeyValueStore } from "./pages/how-key-value-store-works";
@@ -25,7 +25,7 @@ export const pages = {
 
   "Key-Value Store": [
     { title: "Introduction and setup", page: <KeyValueStore /> },
-    { title: "Store Methods", page: <KeyValueStoreMethods /> },
+    { title: "Store Methods", page: <KeyValueStoreOperations /> },
   ],
 
   "Under the Hood": [

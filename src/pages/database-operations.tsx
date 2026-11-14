@@ -1,7 +1,6 @@
 /** @format */
 
 import { memo } from "react";
-import { LuCircleAlert } from "react-icons/lu";
 import { VscSymbolMethod } from "react-icons/vsc";
 import { List } from "../components/List";
 import { InlineCode } from "../components/CodeBlock";
@@ -30,28 +29,6 @@ export const DatabaseOperations = memo(() => {
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="Error" />} />
         <span children=" will be thrown." />
       </p>
-
-      <List
-        type="method"
-        iterable={[
-          {
-            signature: "init(options?: type Omit<DatabaseOptions,'schema'>)",
-            description: [
-              <p>
-                Initializes the database by sending an initialization request to the server with the storage configuration and optional JSON Schema.
-                Returns the database instance. If already initialized, returns the existing instance without initializing it again.
-              </p>,
-              <p id="code" className="mt-2 rounded-md border-2 border-orange-600/30 bg-amber-400/15 px-2 py-1 text-orange-500">
-                <LuCircleAlert className="mr-1 mb-0.5 inline" />
-                <span>Auto called and awaited when </span>
-                <span className="rounded-md bg-gray-400/50 px-1" id="code" children={<InlineCode code="client.createDatabase( . . . )" />} />
-                <span> is invoked.</span>
-              </p>,
-            ],
-          },
-        ]}
-        title="Lifecycle Methods"
-      />
 
       <List iterable={coreMethods} title="Basic CRUD Operation Methods" type="method" />
       <List iterable={batchMethods} title="Batch CRUD Operation Methods" type="method" />

@@ -81,5 +81,3 @@ export const WorkingOfKeyValueStore = memo(() => {
     </main>
   );
 });
-
-WorkingOfKeyValueStore.displayName = "KeyValueStorePage";

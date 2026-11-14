@@ -59,7 +59,6 @@ export const Database = memo(() => {
         iterable={database.databaseOptions}
         title={<span children={["Database Creation Options ( ", <InlineCode code="type DatabaseOptions" />, " )"]} />}
       />
-      <List type="method" iterable={database.methods} title="Database Methods" />
     </main>
   );
 });
