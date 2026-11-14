@@ -9,7 +9,7 @@ export const database = {
         `const clientConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
         `const databaseConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
         `\n` +
-        `const client = await new DatabaseClient(clientConfiguration);\n` +
+        `const client = new DatabaseClient(clientConfiguration);\n` +
         `await client.connect();\n` +
         `\n` +
         `// No data validation, for validation select 'Typed' or 'Validated' above\n` +
@@ -22,7 +22,7 @@ export const database = {
         `const clientConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
         `const databaseConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
         `\n` +
-        `const client = await new DatabaseClient(clientConfiguration);\n` +
+        `const client = new DatabaseClient(clientConfiguration);\n` +
         `await client.connect();\n` +
         `\n` +
         `// This way of usage provides type-level (compile-time) validation\n` +
@@ -37,7 +37,7 @@ export const database = {
         `const clientConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
         `const databaseConfiguration = { keysPerFile: 100, debounceTime: 250, maxDebounceCount: 100 }\n` +
         `\n` +
-        `const client = await new DatabaseClient(clientConfiguration);\n` +
+        `const client = new DatabaseClient(clientConfiguration);\n` +
         `await client.connect();\n` +
         `\n` +
         `// This way of usage provides type-level (compile-time) and server side schema based (run-time) validation\n` +

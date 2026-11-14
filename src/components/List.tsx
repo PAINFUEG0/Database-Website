@@ -32,7 +32,7 @@ export const List = ({ iterable, title, className, type }: Props) => {
         {iterable.map((_) => (
           <li className="flex scrollbar-none flex-col gap-2 overflow-auto border-b border-black/20 px-5 py-5">
             {(Array.isArray(_.signature) ? _.signature : [_.signature]).map((signature, i) => (
-              <span className={"flex flex-row items-center gap-2 " + (i !== 0 ? "-mt-2" : "")}>
+              <span key={i} className={"flex flex-row items-center gap-2 " + (i !== 0 ? "-mt-2" : "")}>
                 {Icon}
                 <InlineCode code={signature} className="flex lg:mb-0.5" />
               </span>

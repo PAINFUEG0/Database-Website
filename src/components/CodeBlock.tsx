@@ -13,7 +13,7 @@ export const CodeBlock = memo(({ filename, code, language = "typescript", classN
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText(code);
+      await navigator.clipboard.writeText(code.trim());
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {

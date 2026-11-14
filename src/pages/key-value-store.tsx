@@ -32,7 +32,7 @@ export const KeyValueStore = memo(() => {
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="debounceTime" />} />
         <span children=" ms or " />
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="maxDebounceCount" />} />
-        <span children=" writes, whichever comes first. Each file is as a temporary file and renamed into place, so a file is never left half-written." />
+        <span children=" writes, whichever comes first. Each file is a temporary file and renamed into place, so a file is never left half-written." />
       </p>
 
       <p className="mb-10 text-sm font-semibold">

@@ -18,14 +18,14 @@ export const pages = {
   "Getting Started with Databases": [
     { title: "Creating a Server", page: <DatabaseServer /> },
     { title: "Connecting to a Server", page: <DatabaseClient /> },
-    { title: "Creating databases", page: <Database /> },
+    { title: "Creating Databases", page: <Database /> },
     { title: "Database Operations", page: <DatabaseOperations /> },
     { title: "Schema Validation", page: <SchemaValidation /> },
   ],
 
   "Key-Value Store": [
-    { title: "Introduction and setup", page: <KeyValueStore /> },
-    { title: "Key-Value store operations", page: <KeyValueStoreOperations /> },
+    { title: "Introduction and Setup", page: <KeyValueStore /> },
+    { title: "Key-Value Store Operations", page: <KeyValueStoreOperations /> },
   ],
 
   "Under the Hood": [

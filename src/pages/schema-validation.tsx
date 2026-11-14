@@ -39,7 +39,7 @@ export const SchemaValidation = memo(() => {
       <p className="mb-5 text-sm font-semibold">
         <span children=" The schema is converted to JSON Schema on the client using " />
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="schema.toJSONSchema()" />} />
-        <span children=" and then sent to the server during initialization where its rebuilt using " />
+        <span children=" and then sent to the server during initialization where it's rebuilt using " />
         <span className="rounded-md bg-gray-300 px-1" children={<InlineCode code="z.fromJSONSchema(PL.schema)" />} />
         <span children=". Validation therefore runs on the server, and only rules that can be expressed in JSON Schema survive that trip." />
       </p>
@@ -81,7 +81,7 @@ export const SchemaValidation = memo(() => {
 
       <Link to="https://zod.dev/api" target="_blank">
         <p className="mb-5 cursor-pointer text-sm font-semibold underline-offset-4 hover:underline">
-          <span children="For further details on schema refer to the official documentaion for zod." />
+          <span children="For further details on schema refer to the official documentation for zod." />
           <LuExternalLink className="mx-1 mb-1.25 inline" />
         </p>
       </Link>

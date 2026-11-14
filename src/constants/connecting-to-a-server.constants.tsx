@@ -86,7 +86,7 @@ export const databaseClient = {
       ],
     },
     {
-      signature: "ssl?: type SslConfig;",
+      signature: "ssl?: type ClientSslConfig;",
       description: "Optional SSL/TLS configuration. When provided, enables secure HTTPS and WSS communication instead of HTTP and WS.",
     },
   ],
