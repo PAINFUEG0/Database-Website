@@ -8,7 +8,7 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { CodeBlock, InlineCode } from "../../../components/CodeBlock";
 
 export const Database = memo(() => {
-  const [selected, setSelected] = useState<"Basic setup" | "Typed database" | "Schema validated database">("Basic setup");
+  const [selected, setSelected] = useState<keyof typeof database.codes.setup>("Basic");
 
   return (
     <main className="relative flex min-h-dvh w-full shrink-0 flex-col overflow-y-auto px-2">
@@ -39,10 +39,10 @@ export const Database = memo(() => {
       </p>
 
       <div className="mb-5 flex flex-row items-center justify-end gap-0 border-b border-black/20 pb-2">
-        {(["Basic setup", "Typed database", "Schema validated database"] as const).map((_) => (
+        {Object.keys(database.codes.setup).map((_) => (
           <button
             children={_}
-            onClick={() => setSelected(_)}
+            onClick={() => setSelected(_ as keyof typeof database.codes.setup)}
             className={
               "cursor-pointer rounded-md px-3 py-1 text-sm font-medium text-nowrap transition-all active:scale-95 " +
               (selected === _ ? "bg-gray-300 opacity-100" : "opacity-50")

@@ -6,7 +6,7 @@ import { InlineCode } from "../../../components/CodeBlock";
 export const database = {
   codes: {
     setup: {
-      "Basic setup":
+      Basic:
         `import { DatabaseClient } from "@xenodb/client";\n` +
         `\n` +
         `const databaseConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
@@ -18,7 +18,7 @@ export const database = {
         `// No data validation, for validation select 'Typed database' or 'Schema validated database' above\n` +
         `const db = await client.createDatabase("users", databaseConfiguration); // Database<unknown>`,
 
-      "Typed database":
+      Typed:
         `import { DatabaseClient } from "@xenodb/client";\n` +
         `\n` +
         `const databaseConfiguration = { host: "localhost", port: 3000, passphrase: "secret" }\n` +
@@ -32,7 +32,7 @@ export const database = {
         `type T = { name: string; role: string; };\n` +
         `const db = await client.createDatabase<T>("users", databaseConfiguration); // Database<T>`,
 
-      "Schema validated database":
+      Validated:
         `import { z } from "zod";\n` +
         `import { DatabaseClient } from "@xenodb/client";\n` +
         `\n` +
