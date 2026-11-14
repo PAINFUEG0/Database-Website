@@ -15,7 +15,8 @@ export const database = {
         `const client = await new DatabaseClient(clientConfiguration);\n` +
         `await client.connect();\n` +
         `\n` +
-        `// No data validation, for validation select 'Typed database' or 'Schema validated database' above\n` +
+        `// No data validation, for validation select 'Typed' or 'Validated' above\n` +
+        `\n` +
         `const db = await client.createDatabase("users", databaseConfiguration); // Database<unknown>`,
 
       Typed:
