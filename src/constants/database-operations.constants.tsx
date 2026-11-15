@@ -65,11 +65,11 @@ export const arrayMethods = [
     description: "Returns the number of elements in the stored array. A missing key is treated as an empty array and returns 0.",
   },
   {
-    signature: "push(key: string, ...items: T[]): Promise<{ elements: T[]; length: number }>",
+    signature: "push(key: string, ...items: T): Promise<{ elements: T; length: number }>",
     description: "Appends items to the end of the array. Returns the inserted elements and the new array length.",
   },
   {
-    signature: "unshift(key: string, ...items: T[]): Promise<{ elements: T[]; length: number }>",
+    signature: "unshift(key: string, ...items: T): Promise<{ elements: T; length: number }>",
     description: "Inserts items at the beginning of the array. Returns the inserted elements and the new array length.",
   },
   {
@@ -82,12 +82,12 @@ export const arrayMethods = [
       "Removes and returns the first element along with the new array length. If the array is empty, element is undefined and length is 0.",
   },
   {
-    signature: "slice(key: string, start: number, end?: number): Promise<{ elements: T[] }>",
+    signature: "slice(key: string, start: number, end?: number): Promise<{ elements: T }>",
     description:
       "Returns a new array containing the selected elements without modifying the stored array. Returns an empty elements array when the key does not exist.",
   },
   {
-    signature: "splice(key: string, start: number, deleteCount?: number, ...items: T[]): Promise<{ added: T[]; removed: T[]; length: number }>",
+    signature: "splice(key: string, start: number, deleteCount?: number, ...items: T): Promise<{ added: T; removed: T; length: number }>",
     description:
       "Removes elements starting at the specified position and can insert replacement items when deleteCount is provided. Returns the added items, removed items, and resulting array length.",
   },

@@ -32,11 +32,11 @@ export const KeyValueStoreOperations = memo(() => {
       </p>
 
       <List iterable={keyValueStore.methods} title="Lifecycle methods" type="method" />
-      <List iterable={coreMethods} title="Basic CRUD Operation Methods" type="method" />
-      <List iterable={batchMethods} title="Batch CRUD Operation Methods" type="method" />
-      <List iterable={arrayMethods} title="Array Specific Methods" type="method" />
-      <List iterable={numericMethods} title="Number Specific Methods" type="method" />
-      <List iterable={booleanMethods} title="Boolean Specific Methods" type="method" />
+      <List iterable={coreMethods} title={["Basic CRUD Operation Methods"]} type="method" />
+      <List iterable={batchMethods} title={["Batch CRUD Operation Methods"]} type="method" />
+      <List iterable={arrayMethods} title={["Array Specific Methods ( ", <InlineCode code="T extends unknown[]" />, " )"]} type="method" />
+      <List iterable={numericMethods} title={["Number Specific Methods ( ", <InlineCode code="T extends number" />, " )"]} type="method" />
+      <List iterable={booleanMethods} title={["Boolean Specific Methods ( ", <InlineCode code="T extends boolean" />, " )"]} type="method" />
     </main>
   );
 });
