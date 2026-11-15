@@ -56,16 +56,8 @@ export const CodeBlock = memo(({ filename, code, language = "typescript", classN
           children={code.trim()}
           language={language}
           showLineNumbers={showLineNumbers}
-          codeTagProps={{ style: { fontFamily: "var(--font-mono), monospace" } }}
-          customStyle={{
-            margin: 0,
-            border: 0,
-            fontSize: "13px",
-            padding: "1.5rem",
-            lineHeight: "1.8",
-            minWidth: "max-content",
-            background: "transparent",
-          }}
+          codeTagProps={{ className: "text-xs leading-6", style: { fontFamily: "var(--font-mono), monospace" } }}
+          customStyle={{ margin: 0, border: 0, padding: "1.5rem", minWidth: "max-content", background: "transparent" }}
         />
       </div>
     </div>
@@ -76,11 +68,12 @@ export const InlineCode = ({ code, className }: { code: string; className?: stri
   <span id="code" className={twMerge("invert", className)}>
     <SyntaxHighlighter
       language="ts"
+      style={theme}
       PreTag="span"
       CodeTag="span"
       children={code}
-      style={theme}
-      customStyle={{ margin: 0, border: 0, fontSize: "13px", padding: 0, background: "transparent" }}
+      codeTagProps={{ className: "text-xs leading-relaxed" }}
+      customStyle={{ margin: 0, border: 0, padding: 0, background: "transparent" }}
     />
   </span>
 );
