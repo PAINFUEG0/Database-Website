@@ -37,7 +37,7 @@ export const List = ({ iterable, title, className, type }: Props) => {
                 <InlineCode code={signature} className="flex lg:mb-0.5" />
               </span>
             ))}
-            <span className="mt-1 text-xs" children={_.description} />
+            <span className="mt-1 text-xs leading-relaxed" children={_.description} />
           </li>
         ))}
       </ul>
