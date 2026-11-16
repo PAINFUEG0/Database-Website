@@ -13,28 +13,88 @@ import { WorkingOfDatabaseServer } from "./pages/how-database-server-works";
 import { WorkingOfDatabaseClient } from "./pages/how-database-client-works";
 
 export const pages = {
-  Introduction: [{ title: "Quick Start", page: <QuickStart /> }],
+  Introduction: [
+    {
+      page: <QuickStart />,
+      title: "Quick Start",
+      description: "Install the package, start a database server, connect a client, and read and write your first key-value data in a few minutes.",
+    },
+  ],
 
   "Getting Started with Databases": [
-    { title: "Creating a Server", page: <DatabaseServer /> },
-    { title: "Connecting to a Server", page: <DatabaseClient /> },
-    { title: "Creating Databases", page: <Database /> },
-    { title: "Database Operations", page: <DatabaseOperations /> },
-    { title: "Schema Validation", page: <SchemaValidation /> },
+    {
+      page: <DatabaseServer />,
+      title: "Creating a Server",
+      description:
+        "Create and boot a DatabaseServer with a port, passphrase and optional SSL. Covers the REST and WebSocket endpoints and logging callbacks.",
+    },
+    {
+      page: <DatabaseClient />,
+      title: "Connecting to a Server",
+      description:
+        "Connect to a DatabaseServer with DatabaseClient over WebSocket or REST. Covers client options, SSL, and error and disconnect handling.",
+    },
+    {
+      page: <Database />,
+      title: "Creating Databases",
+      description:
+        "Create typed or schema-validated databases with createDatabase(), including storage options such as keysPerFile and the debounce settings.",
+    },
+    {
+      page: <DatabaseOperations />,
+      title: "Database Operations",
+      description: "Reference for the Database<T> methods: get, set, delete, batch operations, and helpers for array, number and boolean values.",
+    },
+    {
+      page: <SchemaValidation />,
+      title: "Schema Validation",
+      description:
+        "Validate every write with a Zod schema. Learn what the server enforces and which Zod features, such as async refinements, are not supported.",
+    },
   ],
 
   "Key-Value Store": [
-    { title: "Introduction and Setup", page: <KeyValueStore /> },
-    { title: "Key-Value Store Operations", page: <KeyValueStoreOperations /> },
+    {
+      page: <KeyValueStore />,
+      title: "Introduction and Setup",
+      description:
+        "Use KeyValueStore directly for durable local storage without a server. Covers setup, typing, validation and configuration options.",
+    },
+    {
+      page: <KeyValueStoreOperations />,
+      title: "Key-Value Store Operations",
+      description:
+        "Reference for the KeyValueStore methods: init, get, set, delete, batch operations, and helpers for array, number and boolean values.",
+    },
   ],
 
   "Under the Hood": [
-    { title: "How Key-Value Store Works", page: <WorkingOfKeyValueStore /> },
-    { title: "How Database Server Works", page: <WorkingOfDatabaseServer /> },
-    { title: "How Database Client Works", page: <WorkingOfDatabaseClient /> },
+    {
+      page: <WorkingOfKeyValueStore />,
+      title: "How Key-Value Store Works",
+      description:
+        "How KeyValueStore keeps data in memory, shards it across JSON files, and uses a write-ahead log and atomic writes to stay durable.",
+    },
+    {
+      page: <WorkingOfDatabaseServer />,
+      title: "How Database Server Works",
+      description: "How DatabaseServer authenticates requests, routes REST and WebSocket messages, and manages the databases behind them.",
+    },
+    {
+      page: <WorkingOfDatabaseClient />,
+      title: "How Database Client Works",
+      description:
+        "How DatabaseClient builds requests, matches WebSocket responses by id, handles timeouts, and talks to the server over REST or WebSocket.",
+    },
   ],
 
-  Resources: [{ title: "FAQ & Support", page: <></> }],
+  Resources: [
+    {
+      page: <></>,
+      title: "FAQ and Support",
+      description: "Answers to common questions and ways to get help with Xeno.",
+    },
+  ],
 };
 
 export const allPages = Object.values(pages).flatMap((pages) =>
