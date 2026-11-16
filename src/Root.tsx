@@ -1,5 +1,6 @@
 /** @format */
 
+import { pages } from "./pageMappings";
 import { LuMenu } from "react-icons/lu";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -7,7 +8,10 @@ import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { MobileSidebar } from "./components/sidebar/Mobile";
 import { DesktopSidebar } from "./components/sidebar/Desktop";
-import { memo, useLayoutEffect, useRef, useState } from "react";
+import { memo, useEffect, useLayoutEffect, useRef, useState } from "react";
+
+const url = "https://database-website-nine.vercel.app";
+const meta = Object.fromEntries(Object.values(pages).flatMap((cat) => cat.map((page) => [page.title.toLowerCase().replaceAll(" ", "-"), page])));
 
 export const Root = memo(() => {
   const { pathname } = useLocation();
@@ -15,6 +19,28 @@ export const Root = memo(() => {
   const viewPort = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const positions = useRef<Record<string, number>>({});
+
+  const setTag = (tag: "meta" | "link", selectorKey: string, selectorValue: string, valueKey: "content" | "href", value: string) => {
+    let element = document.head.querySelector(`${tag}[${selectorKey}="${selectorValue}"]`);
+    if (element) return element.setAttribute(valueKey, value);
+    element = document.createElement(tag);
+    element.setAttribute(selectorKey, selectorValue);
+    document.head.appendChild(element);
+  };
+
+  useEffect(() => {
+    const _ = meta[pathname.slice(1)];
+    if (pathname === "/" || !_) return;
+
+    document.title = "Xeno | " + _.title;
+    setTag("link", "rel", "canonical", "href", url);
+    setTag("meta", "property", "og:url", "content", url);
+    setTag("meta", "name", "description", "content", _.description);
+    setTag("meta", "property", "og:title", "content", "Xeno | " + _.title);
+    setTag("meta", "property", "og:description", "content", _.description);
+    setTag("meta", "name", "twitter:title", "content", "Xeno | " + _.title);
+    setTag("meta", "name", "twitter:description", "content", _.description);
+  }, [pathname]);
 
   useLayoutEffect(() => {
     const target = positions.current[pathname] || 0;
@@ -43,10 +69,8 @@ export const Root = memo(() => {
   return (
     <div className="relative flex h-dvh w-dvw shrink-0 flex-row items-center justify-center overflow-hidden">
       <img
-        className="absolute inset-0 h-full w-full opacity-8 blur-sm"
-        // src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVhXX1V9WYPJjuQaXM31yf3BC9CpgjCJ7PIKNL8QUMU0YQzIkMnBiiOF0&s=10"
+        className="absolute inset-0 -z-5 h-full w-full opacity-8 blur-sm"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHgl3c92tILJ7_c42ZZ8587T222fCESSpDIzahdrf3qA&s=10"
-        // src="https://img.magnific.com/free-vector/3d-abstract-circular-paper-layer-texture-graphic_107791-29331.jpg"
       />
 
       <DesktopSidebar theme={theme} setTheme={setTheme} />
