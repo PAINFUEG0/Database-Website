@@ -20,26 +20,19 @@ export const Root = memo(() => {
   const [scrolled, setScrolled] = useState(false);
   const positions = useRef<Record<string, number>>({});
 
-  const setTag = (tag: "meta" | "link", selectorKey: string, selectorValue: string, valueKey: "content" | "href", value: string) => {
-    let element = document.head.querySelector(`${tag}[${selectorKey}="${selectorValue}"]`);
-    if (element) return element.setAttribute(valueKey, value);
-    element = document.createElement(tag);
-    element.setAttribute(selectorKey, selectorValue);
-    document.head.appendChild(element);
-  };
+  const setTag = (tag: "meta" | "link", selectorKey: string, selectorValue: string, value: string) =>
+    document.head.querySelector(`${tag}[${selectorKey}="${selectorValue}"]`)!.setAttribute("content", value);
 
   useEffect(() => {
     const _ = meta[pathname.slice(1)];
     if (pathname === "/" || !_) return;
 
     document.title = "Xeno | " + _.title;
-    setTag("link", "rel", "canonical", "href", url);
-    setTag("meta", "property", "og:url", "content", url);
-    setTag("meta", "name", "description", "content", _.description);
-    setTag("meta", "property", "og:title", "content", "Xeno | " + _.title);
-    setTag("meta", "property", "og:description", "content", _.description);
-    setTag("meta", "name", "twitter:title", "content", "Xeno | " + _.title);
-    setTag("meta", "name", "twitter:description", "content", _.description);
+    setTag("link", "rel", "canonical", url + pathname);
+    setTag("meta", "property", "og:url", url + pathname);
+    setTag("meta", "name", "description", _.description);
+    setTag("meta", "property", "og:title", "Xeno | " + _.title);
+    setTag("meta", "property", "og:description", _.description);
   }, [pathname]);
 
   useLayoutEffect(() => {
