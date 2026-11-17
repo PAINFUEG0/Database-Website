@@ -20,19 +20,16 @@ export const Root = memo(() => {
   const [scrolled, setScrolled] = useState(false);
   const positions = useRef<Record<string, number>>({});
 
-  const setTag = (tag: "meta" | "link", selectorKey: string, selectorValue: string, value: string) =>
-    document.head.querySelector(`${tag}[${selectorKey}="${selectorValue}"]`)!.setAttribute("content", value);
-
   useEffect(() => {
-    const _ = meta[pathname.slice(1)];
-    if (pathname === "/" || !_) return;
+    const _ = meta[pathname.replace(/^\/|\/$/g, "")];
+    if (!_) return;
 
     document.title = "Xeno | " + _.title;
-    setTag("link", "rel", "canonical", url + pathname);
-    setTag("meta", "property", "og:url", url + pathname);
-    setTag("meta", "name", "description", _.description);
-    setTag("meta", "property", "og:title", "Xeno | " + _.title);
-    setTag("meta", "property", "og:description", _.description);
+    document.head.querySelector('link[rel="canonical"]')!.setAttribute("href", url + pathname);
+    document.head.querySelector('meta[property="og:url"]')!.setAttribute("content", url + pathname);
+    document.head.querySelector('meta[name="description"]')!.setAttribute("content", _.description);
+    document.head.querySelector('meta[property="og:title"]')!.setAttribute("content", document.title);
+    document.head.querySelector('meta[property="og:description"]')!.setAttribute("content", _.description);
   }, [pathname]);
 
   useLayoutEffect(() => {

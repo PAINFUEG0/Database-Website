@@ -1,6 +1,7 @@
 {
   "type": "module",
   "scripts": {
+    "build": "vite build && node seo.js",
     "start": "vite --host"
   },
   "dependencies": {
