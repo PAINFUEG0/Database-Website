@@ -17,10 +17,10 @@ export const FaqAndSupport = memo(() => {
         {QA.map(({ Q, A }, i) => (
           <div className="flex h-fit cursor-pointer flex-col gap-1">
             <h2 className="font-semibold">
-              <span className="inline-block w-10 text-center">{i + 1}. </span>
-              <span>{Q}</span>
+              <span className="inline-block text-center md:w-7">{i + 1}.</span>
+              <span>{" " + Q}</span>
             </h2>
-            <motion.p children={A} className="ml-12 h-fit overflow-hidden text-sm leading-relaxed font-medium opacity-80" />
+            <motion.p children={A} className="h-fit overflow-hidden text-sm leading-relaxed font-medium opacity-80 md:ml-9" />
           </div>
         ))}
       </div>

@@ -24,6 +24,7 @@ export const Tail = memo(({ theme, setTheme }: { theme: "light" | "dark"; setThe
           to={_.link}
           target="_blank"
           children={_.icon}
+          aria-label={_.link}
           className="flex aspect-square h-full cursor-pointer rounded-full p-2 text-sm shadow-md shadow-black/50 transition-all active:scale-90 active:shadow-sm"
         />
       ))}
