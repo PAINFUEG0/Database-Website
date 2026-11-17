@@ -2,6 +2,7 @@
 
 import { QuickStart } from "./pages/quick-start";
 import { Database } from "./pages/creating-databases";
+import { FaqAndSupport } from "./pages/faq-and-support";
 import { KeyValueStore } from "./pages/key-value-store";
 import { DatabaseServer } from "./pages/creating-a-server";
 import { SchemaValidation } from "./pages/schema-validation";
@@ -90,7 +91,7 @@ export const pages = {
 
   Resources: [
     {
-      page: <></>,
+      page: <FaqAndSupport />,
       title: "FAQ and Support",
       description: "Answers to common questions and ways to get help with Xeno.",
     },
