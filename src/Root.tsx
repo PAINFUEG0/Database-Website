@@ -49,7 +49,7 @@ export const Root = memo(() => {
     return () => (cancelAnimationFrame(raf), VP.removeEventListener("scroll", listener));
   }, [pathname]);
 
-  const [theme, setTheme] = useState<"light" | "dark">(() => (localStorage.getItem("theme") !== "dark" ? "light" : "dark"));
+  const [theme, setTheme] = useState<"light" | "dark">(() => (localStorage.getItem("theme") === "light" ? "light" : "dark"));
 
   useLayoutEffect(() => {
     localStorage.setItem("theme", theme);
@@ -59,6 +59,7 @@ export const Root = memo(() => {
   return (
     <div className="relative flex h-dvh w-dvw shrink-0 flex-row items-center justify-center overflow-hidden">
       <img
+        alt="bg"
         className="absolute inset-0 -z-5 h-full w-full opacity-8 blur-sm"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHgl3c92tILJ7_c42ZZ8587T222fCESSpDIzahdrf3qA&s=10"
       />
